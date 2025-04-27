@@ -9,4 +9,44 @@ class TTexts{
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Amaan AB";
 
+
+
+
+  static const String firstName = "First Name";
+  static const String lastname = "Last Name";
+  static const String email = "E-mail";
+  static const String password = "Password";
+  static const String newPassword = "New Password";
+  static const String username = "Username";
+  static const String phoneNo = "Phone No";
+  static const String rememberMe = "Remember Me";
+  static const String forgetPassword = "Forget Password";
+  static const String signIn = "Sing In";
+  static const String createAccount = "Create Account";
+  static const String orSignInWtih = "Or sign in with";
+  static const String orSignUpWith = "or sign up with";
+  static const String iAgreeTo = "I agree to";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termsOfUse = "Terms of use";
+  static const String verificationCode = "VerificationCode";
+  static const String resendEmail = "Resend Email";
+  static const String resendEmailIn = "Resend email in";
+
+
+  static const String loginTitle = "Welcome back";
+  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience";
+  static const String signupTitle = "Let's create your account";
+  static const String forgetPasswordTitle = "Forget Password";
+  static const String forgetPasswordSubTitle = "Don't Worry sometimes people can forget too, enter your email and we will send you a password reset link";
+  static const String changeYourPasswordTitle = "Password Reset EmailSent";
+  static const String changeYOurPasswordSubTitle = "Your Account Security is Our Priority! We've Sent You a Secure Link to Safely Change Your Password and keep Your Account Protected.";
+  static const String confirmEmail = "Verify your email address!";
+  static const String confirmEmailSubTitle = "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled and Personalized Offers.";
+  static const String emailNotReceivedMessage = "Didn't get the email? Check your junk/spam or resend it.";
+  static const String yourAccountCreatedTitle = "YOur account successfully created";
+  static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash The Joy of Seamles Shopping ";
+
+
+
+
 }
