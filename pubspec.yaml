@@ -39,6 +39,8 @@ dependencies:
   intl: ^0.18.1
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  flutter_native_splash: ^2.3.2
+  smooth_page_indicator: ^1.1.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   iconsax: ^0.0.8
@@ -75,6 +77,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/icons/
+    - assets/images/on_boarding_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
