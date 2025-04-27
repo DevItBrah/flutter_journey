@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:e_commerce/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
@@ -6,6 +7,7 @@ import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:e_commerce/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:e_commerce/utils/constants/text_strings.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/device/device_utility.dart';
@@ -38,32 +40,32 @@ class OnBoardingScreen extends StatelessWidget {
             ],
           ),
           const OnBoardingSkip(),
-          onBoardingDotNavigation(),
+          const onBoardingDotNavigation(),
+          const OnBoardingNextButton()
         ],
       ),
     );
   }
 }
 
-class onBoardingDotNavigation extends StatelessWidget {
-  const onBoardingDotNavigation({
+class OnBoardingNextButton extends StatelessWidget {
+  const OnBoardingNextButton({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
-      bottom: TDeviceUtils.getBottomNavigationBarHeight() + 25,
-      left: TSizes.defaultSpace,
-      child: SmoothPageIndicator(
-        controller: PageController(),
-        count: 3,
-        effect: ExpandingDotsEffect(
-          activeDotColor: dark ? TColors.light: TColors.dark,
-          dotHeight: 6,
-        ),
-      ),
+      right:TSizes.defaultSpace,
+      bottom:TDeviceUtils.getBottomNavigationBarHeight(),
+      child:ElevatedButton(
+        onPressed: (){},style: ElevatedButton.styleFrom(
+        shape:const CircleBorder(),backgroundColor: Colors.black
+      ),child:Icon(Iconsax.arrow_right_3),
+      )
+
     );
   }
 }
+
+
