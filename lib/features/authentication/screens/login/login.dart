@@ -3,12 +3,11 @@ import 'package:e_commerce/features/authentication/screens/login/widgets/login_h
 import 'package:flutter/material.dart';
 import 'package:e_commerce/common/styles/spacing_styles.dart';
 import 'package:get/get.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
+import '../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/social_buttons.dart';
 import '../../../../utils/constants/text_strings.dart';
-import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -25,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               TLoginHeader(dark: dark),
               const TLoginForm(),
-              TFormDivider(dark: dark),
+              TFormDivider(dividerText: TTexts.orSignInWtih.capitalize!,),
               const TSocialButtons(),
             ],
           ),
