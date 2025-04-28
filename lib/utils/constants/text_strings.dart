@@ -31,6 +31,7 @@ class TTexts{
   static const String verificationCode = "VerificationCode";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
+  static const String and = "And";
 
 
   static const String loginTitle = "Welcome back";

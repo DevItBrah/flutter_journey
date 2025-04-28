@@ -7,6 +7,7 @@ import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
+import '../../signup/widgets/signup.dart';
 
 
 class TLoginForm extends StatelessWidget {
@@ -62,12 +63,12 @@ class TLoginForm extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwItem),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
+              child: OutlinedButton(
+                onPressed: () => Get.to(()=>const SignupScreen()),
                 child: const Text(TTexts.createAccount),
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwSections),
+            // const SizedBox(height: TSizes.spaceBtwSections),
           ],
         ),
       ),

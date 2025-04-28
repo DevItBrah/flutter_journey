@@ -1,4 +1,7 @@
+import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/colors.dart';
 
 class TTextFormFieldTheme{
   TTextFormFieldTheme._();
@@ -12,21 +15,21 @@ class TTextFormFieldTheme{
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:const TextStyle().copyWith(color: Colors.black.withValues(alpha: 0.8)),
       border: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(width:1, color: Colors.grey),
+        borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
+        borderSide: const BorderSide(width:1, color: TColors.grey),
       ),
     enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(14),
+      borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
       borderSide: const BorderSide(width:1,color:Colors.grey),),
     focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width:1,color:Colors.black12),),
+      borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
+      borderSide: const BorderSide(width:1,color:TColors.dark),),
     errorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width:1,color:Colors.red),),
+      borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
+      borderSide: const BorderSide(width:1,color:TColors.warning),),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(14),
-      borderSide: const BorderSide(width:1,color:Colors.orange),),
+      borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
+      borderSide: const BorderSide(width:1,color:TColors.warning),),
   );
   static InputDecorationTheme darkInputDecorationTheme= InputDecorationTheme(
     errorMaxLines:3,
