@@ -1,7 +1,8 @@
+import 'package:e_commerce/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../../../utils/constants/colors.dart';
+import 'package:e_commerce/features/authentication/screens/signup/verify_email.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 class TSignupForm extends StatelessWidget {
@@ -29,7 +30,7 @@ class TSignupForm extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: TSizes.spaceBtwInputField),
+                const SizedBox(width: TSizes.spaceBtwInputField),
                 Expanded(
                   child: TextFormField(
                     expands: false,
@@ -74,36 +75,11 @@ class TSignupForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwInputField),
-            Row(
-              children: [
-                SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: Checkbox(value: true, onChanged: (value) {}),
-                ),
-                SizedBox(width: 10),
-                Text.rich(
-                    TextSpan(children:[
-                      TextSpan(text:'${TTexts.iAgreeTo} ',style: Theme.of(context).textTheme.bodySmall),
-                      TextSpan(text:'${TTexts.privacyPolicy} ',style: Theme.of(context).textTheme.bodySmall!.apply(
-                        color:dark ? TColors.white : TColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor: dark ? TColors.white : TColors.primary,
-                      )),
-                      TextSpan(text:'${TTexts.and} ',style: Theme.of(context).textTheme.bodySmall),
-                      TextSpan(text:'${TTexts.termsOfUse} ',style: Theme.of(context).textTheme.bodySmall!.apply(
-                        color:dark ? TColors.white : TColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor: dark ? TColors.white : TColors.primary,
-                      )),
-                    ])
-                ),
-
-              ],
-            ),
+            const TTermsAndConditionCheckbox(),
             const SizedBox(height: TSizes.spaceBtwInputField,),
-            SizedBox(width:double.infinity,child: ElevatedButton(onPressed: (){}, child: Text(TTexts.createAccount)),)
+            SizedBox(width:double.infinity,child: ElevatedButton(onPressed: ()=>  Get.to(()=>const VerifyEmailScreen()), child: const Text(TTexts.createAccount)),)
           ]),
     );
   }
 }
+
