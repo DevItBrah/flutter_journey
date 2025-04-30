@@ -21,7 +21,6 @@ class TCircularContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:TColors.primary,
       padding: const EdgeInsets.all(0),
       child: Stack(
         children: [
@@ -31,7 +30,7 @@ class TCircularContainer extends StatelessWidget {
             padding: EdgeInsets.all(padding),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(radius),
-                color:TColors.textWhite.withValues(alpha: 0.1)
+                color:TColors.textWhite.withOpacity(0.1)
             ),
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class TCustomCurvedEdges extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -8,16 +9,27 @@ class TCustomCurvedEdges extends CustomClipper<Path> {
     final firstCurve = Offset(0, size.height - 20);
     final lastCurve = Offset(30, size.height - 20);
     path.quadraticBezierTo(
-        firstCurve.dx,
-        firstCurve.dy,
-        lastCurve.dx,
-        lastCurve.dy
+      firstCurve.dx,
+      firstCurve.dy,
+      lastCurve.dx,
+      lastCurve.dy,
     );
     final secondFirstCurve = Offset(0, size.height - 20);
     final secondlastCurve = Offset(size.width - 30, size.height - 20);
     path.quadraticBezierTo(
-        secondFirstCurve.dx, secondFirstCurve.dy, secondlastCurve.dx,
-        secondlastCurve.dy);
+      secondFirstCurve.dx,
+      secondFirstCurve.dy,
+      secondlastCurve.dx,
+      secondlastCurve.dy,
+    );
+    final thirdFirstCurve = Offset(size.width, size.height - 20);
+    final thirdSecondCurve = Offset(size.width, size.height);
+    path.quadraticBezierTo(
+      thirdFirstCurve.dx,
+      thirdFirstCurve.dy,
+      thirdSecondCurve.dx,
+      thirdSecondCurve.dy,
+    );
     path.lineTo(size.width, 0);
     path.close();
     return path;

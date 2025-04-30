@@ -1,8 +1,9 @@
-import 'package:e_commerce/common/widgets/custom_shapes/containers/curverd_edges/curved_edges.dart';
+import 'package:e_commerce/common/widgets/appbar/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
-
-import '../../../../common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:iconsax/iconsax.dart';
+import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../../../utils/constants/text_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,35 +14,75 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ClipPath(
-              clipper: TCustomCurvedEdges(),
-              child: Container(
-                height: 400,
-                color:TColors.primary,
-                padding: const EdgeInsets.all(0),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: 100,
-                      right: 100,
-                      child: TCircularContainer(
-                        backgroundColor: TColors.textWhite.withValues(alpha: 0.1),
-                      ),
+        // Padding(
+        //   padding: const EdgeInsets.only(top:100.0),
+        //   child: SizedBox(
+        //           width: double.infinity,
+        //           child: ElevatedButton(
+        //             onPressed: () {},
+        //             child: const Text('Test Button'),
+        //           ),
+        //         ),
+        // ),
+            TPrimaryHeaderContainer(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TAppBar(
+                    title: Column(
+                      children: [
+                        Text(
+                          TTexts.homeAppbarTitle,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelMedium!.apply(color: TColors.dark),
+                        ),
+                        Text(
+                          TTexts.homeAppbarSubTitle,
+                          style: Theme.of(context).textTheme.headlineSmall!
+                              .apply(color: TColors.white),
+                        ),
+                      ],
                     ),
-                    Positioned(
-                      top: 50,
-                      right: 50,
-                      child: TCircularContainer(
-                        backgroundColor: TColors.textWhite.withValues(alpha: 0.1),
+                    actions: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Iconsax.shopping_bag),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                ],
               ),
-            )
+            ),
+            Column(
+              children: [
+                Text(
+                  TTexts.homeAppbarTitle,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelMedium!.apply(color: TColors.dark),
+                ),
+                Text(
+                  TTexts.homeAppbarSubTitle,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.headlineSmall!.apply(color: TColors.dark),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+class TCurvedEdgeWidget extends StatelessWidget {
+  const TCurvedEdgeWidget({super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+

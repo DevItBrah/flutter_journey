@@ -7,10 +7,7 @@ class TTexts{
   static const String onBoardingSubTitle3 = "From Our Doorstep to Your -Swift, secure, and Contactless Delivery";
   //home
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Amaan AB";
-
-
-
+  static const String homeAppbarSubTitle = "K7 CodeLabs";
 
   static const String firstName = "First Name";
   static const String lastname = "Last Name";
