@@ -17,3 +17,4 @@ class TCurvedEdgesWidget extends StatelessWidget {
     );
   }
 }
+

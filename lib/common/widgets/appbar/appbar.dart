@@ -11,7 +11,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.leadingIcon,
     this.leadingOnPressed,
-    this.showBackArrow = true,
+    this.showBackArrow = false,
   });
 
   final Widget? title;
@@ -41,7 +41,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: title,
         actions: actions,
       ),
-    );
+    );  
   }
   @override
   // TODO: implement preferredSize

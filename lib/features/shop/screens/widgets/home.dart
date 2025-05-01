@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../../../common/widgets/products/cart_menu_icon.dart';
 import '../../../../utils/constants/text_strings.dart';
+
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,28 +17,18 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-        // Padding(
-        //   padding: const EdgeInsets.only(top:100.0),
-        //   child: SizedBox(
-        //           width: double.infinity,
-        //           child: ElevatedButton(
-        //             onPressed: () {},
-        //             child: const Text('Test Button'),
-        //           ),
-        //         ),
-        // ),
             TPrimaryHeaderContainer(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TAppBar(
                     title: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           TTexts.homeAppbarTitle,
                           style: Theme.of(
                             context,
-                          ).textTheme.labelMedium!.apply(color: TColors.dark),
+                          ).textTheme.labelMedium!.apply(color: TColors.grey),
                         ),
                         Text(
                           TTexts.homeAppbarSubTitle,
@@ -44,31 +37,12 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    actions: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Iconsax.shopping_bag),
-                      ),
-                    ],
+                    actions: [TCartCounterIcon(onPressed: () {  },iconColor: TColors.white,)],
                   ),
+
                 ],
+
               ),
-            ),
-            Column(
-              children: [
-                Text(
-                  TTexts.homeAppbarTitle,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelMedium!.apply(color: TColors.dark),
-                ),
-                Text(
-                  TTexts.homeAppbarSubTitle,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.headlineSmall!.apply(color: TColors.dark),
-                ),
-              ],
             ),
           ],
         ),
@@ -76,13 +50,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-class TCurvedEdgeWidget extends StatelessWidget {
-  const TCurvedEdgeWidget({super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
 
+
+//
