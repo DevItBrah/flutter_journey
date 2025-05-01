@@ -14,4 +14,5 @@ class TImages{
   static const String staticSuccessIllustration ='assets/images/animations/verify.jpg';
   static const String deliveredEmailIllustration ='assets/images/animations/emailDelivered.jpg';
   static const String verifyIllustration ='assets/images/animations/product.jpg';
+  static const String  sportIcon='assets/images/category/sports.png';
 }
