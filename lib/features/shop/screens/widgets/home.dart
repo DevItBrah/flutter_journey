@@ -1,10 +1,13 @@
 import 'package:e_commerce/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/products/cart_menu_icon.dart';
+import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
+import 'home_appbar.dart';
 
 
 
@@ -20,28 +23,16 @@ class HomeScreen extends StatelessWidget {
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  TAppBar(
-                    title: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          TTexts.homeAppbarTitle,
-                          style: Theme.of(
-                            context,
-                          ).textTheme.labelMedium!.apply(color: TColors.grey),
-                        ),
-                        Text(
-                          TTexts.homeAppbarSubTitle,
-                          style: Theme.of(context).textTheme.headlineSmall!
-                              .apply(color: TColors.white),
-                        ),
-                      ],
+                  THomeAppBar(),
+                  Container(
+                    width:TDeviceUtils.getScreenWidth(context),
+                    padding: const EdgeInsets.all(TSizes.md),
+                    decoration: BoxDecoration(
+                      color:Colors.transparent,
+
                     ),
-                    actions: [TCartCounterIcon(onPressed: () {  },iconColor: TColors.white,)],
-                  ),
-
+                  )
                 ],
-
               ),
             ),
           ],
@@ -50,6 +41,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
