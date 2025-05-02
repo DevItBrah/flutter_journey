@@ -1,47 +1,59 @@
-import 'package:e_commerce/utils/helpers/helper_functions.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_commerce/common/styles/rounded_container.dart';
+import 'package:e_commerce/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:flutter/material.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:e_commerce/common/widgets/texts/section_heading.dart';
-
 import '../../../../common/widgets/image_text/vertical_image_text.dart';
+import '../../../../common/widgets/images/t_rounded_image.dart';
+import '../../../../common/widgets/products/products_cards/product_card_vertical.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-
 import 'home_appbar.dart';
+import 'home_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  const THomeAppBar(),
-                  const SizedBox(height: TSizes.spaceBtwSections),
-                  const TSearchContainer(text: 'Search Here'),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  THomeAppBar(),
+                  SizedBox(height: TSizes.spaceBtwSections),
+                  TSearchContainer(text: 'Search Here'),
+                  SizedBox(height: TSizes.spaceBtwSections),
                   Padding(
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        const TSectionHeading(
+                        TSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
                           textColor: TColors.white,
                         ),
-                        const SizedBox(height: TSizes.spaceBtwItem),
-
+                        SizedBox(height: TSizes.spaceBtwItem),
                         THomeCategories(),
                       ],
                     ),
                   ),
+                ],
+              ),
+            ),
+            //Body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  TPromoSlider(banners: ['assets/images/category/r1.jpg','assets/images/category/wp7556024-yamaha-r1-2020-wallpapers.jpg','assets/images/category/bannerimg1.jpg'],),
+TProductCardVertical()
                 ],
               ),
             ),
@@ -52,10 +64,10 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+
+
 class THomeCategories extends StatelessWidget {
-  const THomeCategories({
-    super.key,
-  });
+  const THomeCategories({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +88,3 @@ class THomeCategories extends StatelessWidget {
     );
   }
 }
-
-
-//
