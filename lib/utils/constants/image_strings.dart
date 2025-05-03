@@ -17,4 +17,6 @@ class TImages{
   static const String  sportIcon='assets/images/category/sports.png';
   static const String  promoBanner1='assets/images/category/bannerimg1.jpg';
 
+  static String clothIcon = 'assets/images/category/cloth.png';
+
 }

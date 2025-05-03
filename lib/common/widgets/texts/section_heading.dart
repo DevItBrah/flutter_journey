@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
-    super.key, this.onPressed,this.textColor, this.showActionButton=false, required this.title, this.buttonTitle='View All',
+    super.key,
+    this.onPressed,
+    this.textColor,
+    this.showActionButton = false,
+    required this.title,
+    this.buttonTitle = 'View All',
   });
+
   final Color? textColor;
   final bool showActionButton;
   final String title, buttonTitle;
@@ -12,8 +19,16 @@ class TSectionHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(title,style: Theme.of(context).textTheme.headlineSmall!.apply(color:textColor),maxLines: 1,overflow: TextOverflow.ellipsis),
-        if(showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle))
+        Text(
+          title,
+          style: Theme.of(
+            context,
+          ).textTheme.headlineSmall!.apply(color: textColor),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        if (showActionButton)
+          TextButton(onPressed: onPressed, child: Text(buttonTitle)),
       ],
     );
   }

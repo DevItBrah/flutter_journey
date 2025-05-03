@@ -1,29 +1,25 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_commerce/common/styles/rounded_container.dart';
-import 'package:e_commerce/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:flutter/material.dart';
+import '../../../../common/widgets/Layouts/grid_layout.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:e_commerce/common/widgets/texts/section_heading.dart';
 import '../../../../common/widgets/image_text/vertical_image_text.dart';
-import '../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../common/widgets/products/products_cards/product_card_vertical.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import 'home_appbar.dart';
 import 'home_slider.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   THomeAppBar(),
@@ -49,11 +45,19 @@ class HomeScreen extends StatelessWidget {
             ),
             //Body
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  TPromoSlider(banners: ['assets/images/category/r1.jpg','assets/images/category/wp7556024-yamaha-r1-2020-wallpapers.jpg','assets/images/category/bannerimg1.jpg'],),
-TProductCardVertical()
+                  const TPromoSlider(
+                    banners: [
+                      'assets/images/category/r1.jpg',
+                      'assets/images/category/wp7556024-yamaha-r1-2020-wallpapers.jpg',
+                      'assets/images/category/bannerimg1.jpg',
+                    ],
+                  ),
+                  TSectionHeading(title: 'Popular Products',onPressed: (){}),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  TGridLayout(itemCount: 4,itemBuilder: (_,index)=>   TProductCardVertical()),
                 ],
               ),
             ),
@@ -63,9 +67,6 @@ TProductCardVertical()
     );
   }
 }
-
-
-
 class THomeCategories extends StatelessWidget {
   const THomeCategories({super.key});
 
