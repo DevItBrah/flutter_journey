@@ -35,6 +35,7 @@ class TTexts{
 
 
 
+
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience";
   static const String signupTitle = "Let's create your account";

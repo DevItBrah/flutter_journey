@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 class TProduct_price_text extends StatelessWidget {
@@ -24,9 +23,7 @@ class TProduct_price_text extends StatelessWidget {
       children: [
         Text(
           currencySign +price,
-
           maxLines: maxlines,
-
           overflow: TextOverflow.ellipsis,
           style: isLarge? Theme.of(context).textTheme.headlineMedium!.apply(decoration:lineThrough?TextDecoration.lineThrough:null):
               Theme.of(context).textTheme.titleLarge!.apply(decoration:lineThrough?TextDecoration.lineThrough:null)
@@ -41,10 +38,10 @@ class TProduct_price_text extends StatelessWidget {
               ),
             ),
           ),
-          child: SizedBox(
+          child: const SizedBox(
             width: TSizes.iconLg * 1.2,
             height: TSizes.iconLg * 1.2,
-            child: Center(child: const Icon(Iconsax.add, color: TColors.white)),
+            child: Center(child: Icon(Iconsax.add, color: TColors.white)),
           ),
         ),
       ],

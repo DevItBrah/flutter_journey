@@ -34,8 +34,6 @@ class TCircularImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(100)
       ),
       child: Image(fit:fit,
-        // image:AssetImage(TImages.clothIcon),
-        // color:THelperFunctions.isDarkMode(context)?TColors.white :TColors.dark,
         image:isNetworkImage?NetworkImage(image):AssetImage(image) as ImageProvider,
         color: overlayColor,
       ),

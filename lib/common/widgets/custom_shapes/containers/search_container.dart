@@ -5,7 +5,6 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../../../utils/helpers/helper_functions.dart';
-
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
     super.key,
@@ -15,7 +14,6 @@ class TSearchContainer extends StatelessWidget {
     this.showBorder = true,
     this.padding = const EdgeInsets.symmetric(horizontal:TSizes.defaultSpace),
   });
-
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;

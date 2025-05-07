@@ -68,16 +68,16 @@ class TProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 children: [
-                  const TProductTitleText(
+                  TProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItem / 2),
-                  TBrandTitleWithVerifiedIcon(),
+                  SizedBox(height: TSizes.spaceBtwItem / 2),
+                  TBrandTitleWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
             ),
@@ -103,7 +103,6 @@ class TProductCardVertical extends StatelessWidget {
                       child: Center(child: Icon(Iconsax.add,color:TColors.white,),) ,
                     ),
                   )
-
                 ]
             )
           ],
