@@ -4,7 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'features/authentication/screens/onboarding/onboarding.dart';
 
 void main(){
-  runApp(App());
+  runApp(const App());
 }
 class App extends StatelessWidget {
   const App({super.key});

@@ -7,7 +7,6 @@ import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/rounded_container.dart';
-import '../../custom_shapes/containers/circular_container.dart';
 import '../../image_text/TCircularImage.dart';
 class TBrandCard extends StatelessWidget {
   const TBrandCard({super.key,

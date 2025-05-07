@@ -18,7 +18,7 @@ class TProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -77,41 +77,37 @@ class TProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   SizedBox(height: TSizes.spaceBtwItem / 2),
-                  TBrandTitleWithVerifiedIcon(title: 'Nike',),
+                  TBrandTitleWithVerifiedIcon(title: 'Nike'),
                 ],
               ),
             ),
             const Spacer(),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
-                    padding:EdgeInsets.only(left:TSizes.sm)
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(padding: EdgeInsets.only(left: TSizes.sm)),
+                const TProduct_price_text(price: '35'),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(TSizes.cardRadiusMd),
+                      bottomLeft: Radius.circular(TSizes.productImageRadius),
+                    ),
                   ),
-                  const TProduct_price_text(price: '35',),
-                  Container(
-                    decoration: const BoxDecoration(
-                        color:TColors.dark,
-                        borderRadius: BorderRadius.only(
-                          topLeft:Radius.circular(TSizes.cardRadiusMd),
-                          bottomLeft:Radius.circular(TSizes.productImageRadius),
-                        )
+                  child: const SizedBox(
+                    width: TSizes.iconLg * 1.2,
+                    height: TSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(Iconsax.add, color: TColors.white),
                     ),
-                    child: const SizedBox(
-                      width:TSizes.iconLg*1.2,
-                      height: TSizes.iconLg*1.2,
-                      child: Center(child: Icon(Iconsax.add,color:TColors.white,),) ,
-                    ),
-                  )
-                ]
-            )
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
