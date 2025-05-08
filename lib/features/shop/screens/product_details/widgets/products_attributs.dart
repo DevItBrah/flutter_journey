@@ -3,7 +3,6 @@ import 'package:e_commerce/common/widgets/heading/section_healding.dart';
 import 'package:e_commerce/common/widgets/texts/product_price_text.dart';
 import 'package:e_commerce/common/widgets/texts/product_title_text.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../common/widgets/chips/choice_chip.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -63,8 +62,8 @@ class ProductsAttributs extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(title: 'Color'),
-            SizedBox(height: TSizes.spaceBtwItem/2,),
+            const TSectionHeading(title: 'Color'),
+            const SizedBox(height: TSizes.spaceBtwItem/2,),
             Wrap(
               spacing: 8,
               children: [
@@ -86,8 +85,8 @@ class ProductsAttributs extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(title: 'Size '),
-            SizedBox(height: TSizes.spaceBtwItem/2,),
+            const TSectionHeading(title: 'Size '),
+            const SizedBox(height: TSizes.spaceBtwItem/2,),
             Wrap(
               spacing: 8 ,
               children: [
