@@ -18,6 +18,9 @@ class TImages{
   static const String  promoBanner1='assets/images/category/bannerimg1.jpg';
   static const String  productImage3='assets/images/category/shirt.png';
   static const String  user='assets/images/category/user.png';
+  static const String  productImage1='assets/images/category/user.png';
+  static const String  productImage5='assets/images/category/shirt.png';
+  static const String  cosmeticsIcon='assets/images/category/nike.png';
 
   static String clothIcon = 'assets/images/category/cloth.png';
 
