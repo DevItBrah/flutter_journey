@@ -1,6 +1,6 @@
 import 'package:e_commerce/common/widgets/Layouts/grid_layout.dart';
 import 'package:e_commerce/common/widgets/heading/section_healding.dart';
-import 'package:e_commerce/common/widgets/products/cart_menu_icon.dart';
+import 'package:e_commerce/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:e_commerce/features/shop/screens/widgets/category_tab.dart';
 import 'package:e_commerce/utils/constants/enums.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';

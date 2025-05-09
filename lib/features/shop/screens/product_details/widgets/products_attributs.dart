@@ -52,7 +52,7 @@ class TProductAttributes extends StatelessWidget {
               ),
               const TProductTitleText(title: 'This is the Description of the Products and it can go upto max 4 lines',
               smallSize: true,
-              maxlines: 4 ,)
+              maxLines: 4 ,)
 
               ///Actual Price
             ],

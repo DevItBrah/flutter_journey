@@ -17,7 +17,7 @@ class TCircularIcon extends StatelessWidget {
   });
 
 
-  final height, width, size;
+  final double?  height, width, size;
   final IconData icon;
   final Color? color;
   final Color? backgroundColor;
