@@ -7,7 +7,6 @@ import '../../../utils/constants/sizes.dart';
 class TCircularIcon extends StatelessWidget {
   const TCircularIcon({
     super.key,
-    required this.dark,
     this.width,
     this.height,
     this.size = TSizes.lg,
@@ -17,7 +16,7 @@ class TCircularIcon extends StatelessWidget {
     required this.icon,
   });
 
-  final bool dark;
+
   final height, width, size;
   final IconData icon;
   final Color? color;

@@ -57,7 +57,7 @@ class TProductImageSlider extends StatelessWidget {
                 TCircularIcon(
                   icon: Iconsax.heart5,
                   color: Colors.red,
-                  dark: false,
+                  // dark: false,
                 ),
               ],
             ),

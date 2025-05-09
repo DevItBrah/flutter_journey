@@ -65,7 +65,7 @@ class TProductCardVertical extends StatelessWidget {
                     right: 0,
                     child: TCircularIcon(
                       icon: Iconsax.heart5,
-                      dark: dark,
+                      // dark: dark,
                       color: Colors.red,
                     ),
                   ),

@@ -8,8 +8,8 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
-class ProductsAttributs extends StatelessWidget {
-  const ProductsAttributs({super.key});
+class TProductAttributes extends StatelessWidget {
+  const TProductAttributes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +70,6 @@ class ProductsAttributs extends StatelessWidget {
                 TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
                 TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
                 TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},
-                ),TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
-                TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
-                TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},
-                ),TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
-                TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
-                TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},
                 )
               ],
             )
@@ -90,12 +84,6 @@ class ProductsAttributs extends StatelessWidget {
             Wrap(
               spacing: 8 ,
               children: [
-                TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
-                TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
-                TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},),
-                TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
-                TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
-                TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},),
                 TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
                 TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
                 TChoiceChip(text: 'Yellow', selected: false ,onSelected: (value){},),
