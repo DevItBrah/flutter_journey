@@ -21,6 +21,7 @@ class TImages{
   static const String  productImage1='assets/images/category/user.png';
   static const String  productImage5='assets/images/category/shirt.png';
   static const String  cosmeticsIcon='assets/images/category/nike.png';
+  static const String userProfileImage1='assets/images/category/nike.png';
 
   static String clothIcon = 'assets/images/category/cloth.png';
 

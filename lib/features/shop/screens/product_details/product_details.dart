@@ -5,8 +5,11 @@ import 'package:e_commerce/features/shop/screens/product_details/widgets/bottom_
 import 'package:e_commerce/features/shop/screens/product_details/widgets/product_details_image_slider.dart';
 import 'package:e_commerce/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:e_commerce/features/shop/screens/product_details/widgets/products_attributs.dart';
+import 'package:e_commerce/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -51,7 +54,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 const Divider(),
                 const SizedBox(height:TSizes.spaceBtwItem),
                 TSectionHeading(title: 'Reviews(199',showActionButton: false),
-                IconButton(icon:const Icon(Iconsax.arrow_right_3,size:18),onPressed:(){}),
+                IconButton(icon:const Icon(Iconsax.arrow_right_3,size:18),onPressed:()=> Get.to(()=>const ProductReviewsScreen())),
                 const SizedBox(height: TSizes.spaceBtwSections,)
               ],
             ))
