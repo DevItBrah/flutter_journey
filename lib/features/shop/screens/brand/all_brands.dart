@@ -3,11 +3,9 @@ import 'package:e_commerce/common/widgets/heading/section_healding.dart';
 import 'package:e_commerce/features/shop/screens/brand/brand_products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/products/products_cards/brand_card.dart';
-import '../../../../common/widgets/products/sortable/sortable_products.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class AllBrandsScreen extends StatelessWidget {
