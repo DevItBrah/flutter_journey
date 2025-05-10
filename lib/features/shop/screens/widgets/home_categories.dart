@@ -11,6 +11,7 @@ import '../../../../common/widgets/products/products_cards/product_card_vertical
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../all_products/all_products.dart';
 import 'home_appbar.dart';
 import 'home_slider.dart';
 class HomeScreen extends StatelessWidget {
@@ -58,7 +59,8 @@ class HomeScreen extends StatelessWidget {
                       'assets/images/category/bannerimg1.jpg',
                     ],
                   ),
-                  TSectionHeading(title: 'Popular Products',onPressed: (){}),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
+                  TSectionHeading(title: 'Popular Products',onPressed: ()=>Get.to(()=>const AllProducts())),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   TGridLayout(itemCount: 4,itemBuilder: (_,index)=>   const TProductCardVertical()),
                 ],
