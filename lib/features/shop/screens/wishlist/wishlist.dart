@@ -6,7 +6,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../../common/widgets/products/products_cards/product_card_vertical.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../widgets/home.dart';
+import '../widgets/home_categories.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});

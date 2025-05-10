@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'features/shop/screens/store/store.dart';
-import 'features/shop/screens/widgets/home.dart';
+import 'features/shop/screens/widgets/home_categories.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});

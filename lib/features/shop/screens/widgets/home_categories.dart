@@ -1,63 +1,93 @@
+import 'package:e_commerce/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../../common/widgets/Layouts/grid_layout.dart';
+import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:e_commerce/common/widgets/texts/section_heading.dart';
+import '../../../../common/widgets/image_text/vertical_image_text.dart';
+import '../../../../common/widgets/products/products_cards/product_card_vertical.dart';
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/helpers/helper_functions.dart';
-class TVerticalImageText extends StatelessWidget {
-  const TVerticalImageText({
-    super.key,
-    required this.image,
-    required this.title,
-    this.textColor = TColors.white,
-    this.backgroundColor = TColors.white,
-    this.onTap,
-  });
-
-  final String image, title;
-  final Color textColor;
-  final Color? backgroundColor;
-  final void Function()? onTap;
+import 'home_appbar.dart';
+import 'home_slider.dart';
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(right: TSizes.spaceBtwItem),
+    return Scaffold(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
-              decoration: BoxDecoration(
-                color:
-                backgroundColor ?? (dark ? TColors.black : TColors.white),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                  color: dark ? TColors.light : TColors.dark,
-                ),
+            const TPrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  THomeAppBar(),
+                  SizedBox(height: TSizes.spaceBtwSections),
+                  TSearchContainer(text: 'Search Here'),
+                  SizedBox(height: TSizes.spaceBtwSections),
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(
+                          title: 'Popular Categories',
+                          showActionButton: false,
+                          textColor: TColors.white,
+                        ),
+                        SizedBox(height: TSizes.spaceBtwItem),
+                        THomeCategories(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwItem / 2),
-            SizedBox(
-              width: 55,
-              child: Text(
-                title,
-                style: Theme.of(
-                  context,
-                ).textTheme.labelMedium!.apply(color: TColors.white),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+            //Body
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const TPromoSlider(
+                    banners: [
+                      'assets/images/category/r1.jpg',
+                      'assets/images/category/wp7556024-yamaha-r1-2020-wallpapers.jpg',
+                      'assets/images/category/bannerimg1.jpg',
+                    ],
+                  ),
+                  TSectionHeading(title: 'Popular Products',onPressed: (){}),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  TGridLayout(itemCount: 4,itemBuilder: (_,index)=>   const TProductCardVertical()),
+                ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+class THomeCategories extends StatelessWidget {
+  const THomeCategories({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 80,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: 6,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (_, index) {
+          return TVerticalImageText(
+            image: TImages.sportIcon,
+            title: 'Shoes',
+            onTap: () =>Get.to(()=>SubCategoriesScreen()),
+          );
+        },
       ),
     );
   }
