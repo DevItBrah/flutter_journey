@@ -3,7 +3,6 @@ import 'package:e_commerce/common/widgets/heading/section_healding.dart';
 import 'package:e_commerce/features/personalization/screens/address/address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';

@@ -1,7 +1,5 @@
-import 'package:e_commerce/common/widgets/image_text/TCircularImage.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/remove_splash_from_web.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../../common/styles/rounded_container.dart';
@@ -21,7 +19,7 @@ class UserReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage:AssetImage(TImages.userProfileImage1),),
                 const SizedBox(width:TSizes.spaceBtwItem),
                 Text('John Doe',style:Theme.of(context).textTheme.titleLarge),
@@ -55,7 +53,7 @@ class UserReviewCard extends StatelessWidget {
         TRoundedContainer(
           backgroundColor: dark? TColors.darkerGrey:TColors.grey,
           child: Padding(
-            padding: EdgeInsets.all(TSizes.md),
+            padding: const EdgeInsets.all(TSizes.md),
             child: Column(
               children: [
                 Row(

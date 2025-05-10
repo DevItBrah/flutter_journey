@@ -25,7 +25,7 @@ class TBottomAddToCart extends StatelessWidget {
         children: [
           Row(
             children: [
-              TCircularIcon(icon:Iconsax.minus,
+              const TCircularIcon(icon:Iconsax.minus,
               backgroundColor: TColors.darkGrey,
               width: 40,
               height: 40,
@@ -33,7 +33,7 @@ class TBottomAddToCart extends StatelessWidget {
               const SizedBox(width:TSizes.spaceBtwItem),
               Text('2',style:Theme.of(context).textTheme.titleSmall),
               const SizedBox(width:TSizes.spaceBtwItem),
-              TCircularIcon(icon:Iconsax.add,
+              const TCircularIcon(icon:Iconsax.add,
                   backgroundColor: TColors.black,
                   width: 40,
                   height: 40,

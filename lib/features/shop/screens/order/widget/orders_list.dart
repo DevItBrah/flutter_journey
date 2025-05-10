@@ -25,8 +25,8 @@ class TOrderListItems extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Iconsax.ship),
-                SizedBox(width: TSizes.spaceBtwItem / 2),
+                const Icon(Iconsax.ship),
+                const SizedBox(width: TSizes.spaceBtwItem / 2),
                 Expanded(
                   child: Column(
                     mainAxisSize:MainAxisSize.min,
@@ -55,8 +55,8 @@ class TOrderListItems extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      Icon(Iconsax.tag),
-                      SizedBox(width: TSizes.spaceBtwItem / 2),
+                      const Icon(Iconsax.tag),
+                      const SizedBox(width: TSizes.spaceBtwItem / 2),
                       Expanded(
                         child: Column(
                           mainAxisSize:MainAxisSize.min,
@@ -82,8 +82,8 @@ class TOrderListItems extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      Icon(Iconsax.calendar),
-                      SizedBox(width: TSizes.spaceBtwItem / 2),
+                      const Icon(Iconsax.calendar),
+                      const SizedBox(width: TSizes.spaceBtwItem / 2),
                       Expanded(
                         child: Column(
                           mainAxisSize:MainAxisSize.min,

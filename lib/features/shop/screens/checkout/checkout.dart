@@ -5,7 +5,6 @@ import 'package:e_commerce/features/shop/screens/checkout/widgets/billing_paymen
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
@@ -34,23 +33,23 @@ class CheckoutScreen extends StatelessWidget {
             const TCartItems(showAddRemoveButton: false),
             const SizedBox(height: TSizes.spaceBtwSections),
 
-            TCouponCode(),
+            const TCouponCode(),
             const SizedBox(height: TSizes.spaceBtwSections),
 
             TRoundedContainer(
               showBorder: true,
               padding: const EdgeInsets.all(TSizes.md),
               backgroundColor: dark ? TColors.black : TColors.white,
-              child: Column(
+              child: const Column(
                 children: [
                   //pricing
                   TBillingAmountSection(),
-                  const SizedBox(height: TSizes.spaceBtwItem),
+                  SizedBox(height: TSizes.spaceBtwItem),
                   //divider
-                  const Divider(),
-                  const SizedBox(height: TSizes.spaceBtwItem),
+                  Divider(),
+                  SizedBox(height: TSizes.spaceBtwItem),
                   TBillingPaymentSection(),
-                  const SizedBox(height: TSizes.spaceBtwItem),
+                  SizedBox(height: TSizes.spaceBtwItem),
                   TBillingAddressSection(),
                 ],
               ),

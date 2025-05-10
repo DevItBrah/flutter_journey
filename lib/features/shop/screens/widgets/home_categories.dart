@@ -1,7 +1,6 @@
 import 'package:e_commerce/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../../../common/widgets/Layouts/grid_layout.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
@@ -87,7 +86,7 @@ class THomeCategories extends StatelessWidget {
           return TVerticalImageText(
             image: TImages.sportIcon,
             title: 'Shoes',
-            onTap: () =>Get.to(()=>SubCategoriesScreen()),
+            onTap: () =>Get.to(()=>const SubCategoriesScreen()),
           );
         },
       ),

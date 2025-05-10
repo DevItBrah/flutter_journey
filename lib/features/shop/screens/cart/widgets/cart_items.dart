@@ -15,19 +15,19 @@ final bool showAddRemoveButton;
         itemCount: 2,
         itemBuilder:(_,index)=> Column(
           children: [
-            TCartItem(),
-            if(showAddRemoveButton)SizedBox(height: TSizes.spaceBtwItem,),
-            if(showAddRemoveButton) Row(
+            const TCartItem(),
+            if(showAddRemoveButton)const SizedBox(height: TSizes.spaceBtwItem,),
+            if(showAddRemoveButton) const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween ,
               children: [
                 Row(
                   children: [
-                    const SizedBox(width: 70,),
+                    SizedBox(width: 70,),
                     TProductQuantityWithAddRemoveButton(),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 10),
+                  padding: EdgeInsets.only(right: 10),
                   child: TProduct_price_text(price: '256 '),
                 )
 

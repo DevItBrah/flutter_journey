@@ -10,7 +10,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
 class TProductCardHorizontal extends StatelessWidget {
   const TProductCardHorizontal({super.key});
@@ -20,7 +19,7 @@ class TProductCardHorizontal extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return Container(
       width:310,
-      padding: EdgeInsets.all(1),
+      padding: const EdgeInsets.all(1),
     decoration: BoxDecoration(
       // boxShadow:[TShadowStyle.verticalProductShadow],
       borderRadius: BorderRadius.circular(TSizes.productImageRadius),
@@ -34,7 +33,7 @@ class TProductCardHorizontal extends StatelessWidget {
           backgroundColor: dark ? TColors.dark:TColors.light,
           child:  Stack(
             children: [
-              SizedBox(height:120,width:120,child: TRoundedImage(imageUrl: TImages.productImage5,applyImageRadius: true,)
+              const SizedBox(height:120,width:120,child: TRoundedImage(imageUrl: TImages.productImage5,applyImageRadius: true,)
               ),Positioned(
                 top: 12,
                 child: TRoundedContainer(
@@ -52,7 +51,7 @@ class TProductCardHorizontal extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: 0,
                 right: 0,
                 child: TCircularIcon(
@@ -78,11 +77,11 @@ class TProductCardHorizontal extends StatelessWidget {
                     TBrandTitleWithVerifiedIcon(title: 'Nike')
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(child: const TProduct_price_text(price: '256.0')),
+                    const Flexible(child: TProduct_price_text(price: '256.0')),
                     Container(
                       decoration: const BoxDecoration(
                         color:TColors.dark,

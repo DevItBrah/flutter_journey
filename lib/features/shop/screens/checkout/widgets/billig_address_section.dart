@@ -20,7 +20,7 @@ class TBillingAddressSection extends StatelessWidget {
           const SizedBox(width: TSizes.spaceBtwItem,),
           Text('1456465664',style:Theme.of(context).textTheme.bodyMedium),
         ],),
-        SizedBox(height: TSizes.spaceBtwItem,),
+        const SizedBox(height: TSizes.spaceBtwItem,),
         Row(
           children: [
             const Icon(Icons.location_history,color:Colors.grey,size:16),

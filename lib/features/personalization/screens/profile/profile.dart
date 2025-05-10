@@ -1,4 +1,3 @@
-import 'package:e_commerce/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:e_commerce/common/widgets/heading/section_healding.dart';
 import 'package:e_commerce/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:flutter/material.dart';
