@@ -10,6 +10,7 @@ import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../shop/screens/order/order.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -55,14 +56,14 @@ class SettingsScreen extends StatelessWidget {
                   TSettingMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
-                    subTitle: 'Add, remove products and move to checkout',
+                    subTitle: 'Add, remove products and move to checkout.dart',
                     onTap: () {},
                   ),
                   TSettingMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress and complete orders',
-                    onTap: () {},
+                    onTap: () => Get.to(()=>const OrderScreen()),
                   ),
                   TSettingMenuTile(
                     icon: Iconsax.bank,
