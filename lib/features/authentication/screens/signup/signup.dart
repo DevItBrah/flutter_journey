@@ -1,5 +1,6 @@
 import 'package:e_commerce/common/widgets/login_signup/form_divider.dart';
 import 'package:e_commerce/common/widgets/login_signup/social_buttons.dart';
+import 'package:e_commerce/features/authentication/screens/signup/signup_controller.dart';
 import 'package:e_commerce/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
@@ -21,6 +23,7 @@ class SignupScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
+              //title
               Text(
                 TTexts.signupTitle,
                 style: Theme.of(context).textTheme.headlineMedium,
@@ -28,6 +31,7 @@ class SignupScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
               TSignupForm(dark: dark),
             const SizedBox(height: TSizes.spaceBtwInputField),
+            //divider
             TFormDivider(dividerText: TTexts.orSignInWtih.capitalize!),
               const SizedBox(height: TSizes.spaceBtwInputField),
               const TSocialButtons(),

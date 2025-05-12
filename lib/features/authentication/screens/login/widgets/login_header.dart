@@ -1,3 +1,4 @@
+import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -24,6 +25,7 @@ import '../../../../../utils/constants/text_strings.dart';class TLoginHeader ext
         Text(
           TTexts.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
+
         ),
         const SizedBox(height: TSizes.sm),
         Text(
