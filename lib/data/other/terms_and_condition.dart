@@ -16,11 +16,13 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
 
     return Row(
       children: [
-        SizedBox(width:24,height: 24,child:Obx(()=> Checkbox(value: controller.privacypolicy.value,
-            // onChanged: (value)=>controller.privacypolicy.value=!controller.privacypolicy.value
-          onChanged: (value) => controller.privacypolicy.value = value ?? false,
+        SizedBox(width:24,height: 24,
+          child: Obx(()=>
+              Checkbox(value: controller.privacypolicy.value,
+            onChanged: (value)=>controller.privacypolicy.value= !controller.privacypolicy.value
+          // onChanged: (value) => controller.privacypolicy.value = value ?? false,
         )),),
-        SizedBox(width:TSizes.spaceBtwItem),
+        const  SizedBox(width:TSizes.spaceBtwItem),
         Text.rich(
           TextSpan(
             children: [
