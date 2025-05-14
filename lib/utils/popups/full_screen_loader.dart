@@ -1,7 +1,6 @@
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../common/widgets/loader/animation_loader.dart';
 import '../constants/colors.dart';
