@@ -15,7 +15,7 @@ import '../../../navigation_menu.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
 import '../../../utils/exceptions/format_exceptions.dart';
-import '../../../utils/exceptions/platform_exception.dart';
+import '../../../utils/exceptions/platform_exceptions.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -56,13 +56,13 @@ class AuthenticationRepository extends GetxController {
   // }
   Future<UserCredential>loginWithEmailAndPassword(String email,String password) async{
     try{
-      return await _auth.signInWithEmailAndPassword(email:email, password:password)
+      return await _auth.signInWithEmailAndPassword(email:email, password:password);
     }on FirebaseAuthException catch(e){
-      throw FirebaseAuthException(e.code).message;
+      throw TFirebaseAuthException(e.code).message;
           }on FirebaseException catch (e){
       throw TFirebaseException(e.code).message;
-    }on FormateException catch(_){
-      throw const TFormatExcepton();
+    }on FormatException catch(_){
+      throw const TFormatException();
     }on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     }catch (e){
@@ -72,17 +72,17 @@ class AuthenticationRepository extends GetxController {
 
   Future<UserCredential> registerWithEmailAndPassword(String email,String password) async{
     try{
-      return await _auth.createUserWithEmailAndPassword(String email, String password);
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e){
       throw TFirebaseAuthException(e.code).message;
-    }on FirbaseException catch(e){
+    }on FirebaseException catch(e){
       throw TFirebaseException(e.code).message;
     }on FormatException catch(_){
       throw const TFormatException();
     }on PlatformException catch(e){
       throw TPlatformException(e.code).message;
     } catch (e){
-      throw 'something went wrong.please try again'
+      throw 'something went wrong.please try again';
     }
   }
 
@@ -96,18 +96,14 @@ class AuthenticationRepository extends GetxController {
       throw TFirebaseException(e.code).message;
     }on FormatException catch(_){
       throw const TFormatException();
-    }on TPlatformException(e.code).message;
-  }catch(e){
-    throw "Something went wrong. Please try again"
+    }on PlatformException catch(e){
+      throw TPlatformException(e.code).message;
+    } catch (e){
+      throw 'something went wrong.please try again';
+    }
   }
 
-
-
-
-
-
-
-  Future<void> logout() async{
+    Future<void> logout() async{
     try{
       await FirebaseAuth.instance.signOut();
       Get.offAll(()=> const LoginScreen());

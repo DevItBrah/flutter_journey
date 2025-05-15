@@ -1,9 +1,6 @@
 import 'dart:async';
-
-import 'package:e_commerce/utils/theme/custom_theme/checkbox_theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
 import '../../../common/widgets/successs_screen/success_screen.dart';
 import '../../../data/repositories/authentication/authentication_repository.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -11,7 +8,7 @@ import '../../../utils/constants/text_strings.dart';
 import '../../../utils/loaders/loaders.dart';
 class VerifyEmailController extends GetxController{
   static VerifyEmailController get instance => Get.find();
-
+Timer? timer;
   @override
   void onInit(){
     sendEmailVerification();
@@ -33,7 +30,7 @@ class VerifyEmailController extends GetxController{
     await FirebaseAuth.instance.currentUser?.reload();
     final user =FirebaseAuth.instance.currentUser;
     if(user?.emailVerified??false){
-      timer.cancel();
+      timer?.cancel();
       Get.off(
           ()=>SuccessScreen(
             image:TImages.successfullyRegisterAnimation,
@@ -47,7 +44,7 @@ class VerifyEmailController extends GetxController{
   }
   checkEmailVerificationStatus() async  {
     final current = FirebaseAuth.instance.currentUser;
-    if(current!=null&&currentUser.emailVerified) {
+    if(current!=null&&current.emailVerified) {
       Get.off(
           ()=>SuccessScreen(
             image:TImages.successfullyRegisterAnimation,
@@ -55,8 +52,7 @@ class VerifyEmailController extends GetxController{
             subTitle:TTexts.yourAccountCreatedSubTitle,
             onPressed:()=>AuthenticationRepository.instance.screenRedirect(),
           )
-      )
-
+      );
     }
   }
 }
