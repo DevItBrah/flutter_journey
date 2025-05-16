@@ -8,14 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-
-
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../../features/authentication/screens/signup/verify_email.dart';
 import '../../../navigation_menu.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
 import '../../../utils/exceptions/format_exceptions.dart';
 import '../../../utils/exceptions/platform_exceptions.dart';
+import '../user/user_repository.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -39,21 +39,12 @@ class AuthenticationRepository extends GetxController {
       Get.offAll(()=>VerifyEmailScreen(email:_auth.currentUser?.email));
     }
   }else{
-    deviceStorage.writeIfNull('IsFistTime', true);
+    deviceStorage.writeIfNull('IsFirstTime', true);
     deviceStorage.read('IsFirstTime') != true
         ? Get.offAll(() => const LoginScreen())
         : Get.offAll(const OnBoardingScreen());
   }
-  }
-  //   if(kDebugMode){
-  //     print('===================Get Storage auth repo========================');
-  //     print(deviceStorage.read('IsFirstTime'));
-  //   }
-  //   //local storage
-  //   deviceStorage.writeIfNull('IsFirstTime',true);
-  //   deviceStorage.read('IsFirstTime') !=true ? Get.offAll(()=> const LoginScreen()):Get.offAll(const OnBoardingScreen());
-  //
-  // }
+
   Future<UserCredential>loginWithEmailAndPassword(String email,String password) async{
     try{
       return await _auth.signInWithEmailAndPassword(email:email, password:password);
@@ -103,6 +94,29 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  Future<void>signInWithGoogle() async{
+    try{
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication? googleAuth= await userAccount?.authentication;
+      final credentials = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken);
+      return await _auth.signInWithCredential(credentials);
+
+    }on FirebaseAuthException catch(e){
+      throw TFirebaseAuthException(e.code).message;
+    }on FirebaseException catch (e){
+      throw TFirebaseException(e.code).message;
+    }on FormatException catch(_){
+      throw const TFormatException();
+    }on PlatformException catch(e){
+      throw TPlatformException(e.code).message;
+    } catch (e){
+      if(kDebugMode)print('something went wrong.please try again: $e');
+      return null;
+    }
+  }
+
     Future<void> logout() async{
     try{
       await FirebaseAuth.instance.signOut();
@@ -119,9 +133,21 @@ class AuthenticationRepository extends GetxController {
       throw'Something went wrong. Please try again';
   }
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  Future<void> deleteAccount()async{
+    try{
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    }on FirebaseAuthException catch(e){
+      throw TFirebaseAuthException(e.code).message;
+    }on FirebaseException catch(e){
+      throw TFirebaseException(e.code).message;
+    }on FormatException catch(_){
+      throw const TFormatException();
+    }on PlatformException catch (e){
+      throw TPlatformException(e.code).message;
+    }catch(e){
+      throw 'Something went wrong. Please try again';
+    }
   }
+
 }

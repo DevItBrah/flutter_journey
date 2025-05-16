@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/formatters/formatters.dart';
@@ -61,7 +62,9 @@ factory UserModel.fromSnapshot(DocumentSnapshot<Map<String,dynamic>> document){
       email:data['Email']??'',
       phoneNumber: data['PhoneNumber']??'',
       profilePicture: data['ProfilePicture']??'',
-    )
+    );
+  } else{
+    return UserModel.empty();
   }
 }
 }

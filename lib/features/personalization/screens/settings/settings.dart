@@ -1,6 +1,7 @@
 import 'package:e_commerce/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:e_commerce/common/widgets/heading/section_healding.dart';
 import 'package:e_commerce/features/personalization/screens/address/address.dart';
+import 'package:e_commerce/features/personalization/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  const TUserProfileTile(),
+                  TUserProfileTile(onPressed: ()=> Get.to(()=>const ProfileScreen()),),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
